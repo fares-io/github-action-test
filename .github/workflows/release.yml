@@ -31,8 +31,9 @@ jobs:
       - run: jq '.' $GITHUB_EVENT_PATH
       - id: revision
         run: |
-          VERSION=$(cat .bumpversion.cfg | grep current_version | awk '{ print version="\$3" }')
-          echo "${VERSION}" >> "$GITHUB_OUTPUT"
+          VERSION=$(cat .bumpversion.cfg | grep current_version | awk '{ print \$3 }')
+          echo "version=${VERSION}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
       # cat .bumpversion.cfg | grep current_version | awk '{ print version=$3 }' >> $GITHUB_ENV
 
       - run: echo "some publish with version {{ steps.revision.version }}"
