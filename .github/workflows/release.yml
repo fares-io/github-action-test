@@ -33,7 +33,7 @@ jobs:
         run: |
           VERSION=$(cat .bumpversion.cfg | grep current_version | awk '{ print $3 }')
           echo "version=${VERSION}"
-          echo -n "version=\"${VERSION}\"" >> "${GITHUB_OUTPUT}"
+          echo -n "version=${VERSION}" >> "${GITHUB_OUTPUT}"
       # cat .bumpversion.cfg | grep current_version | awk '{ print version=$3 }' >> $GITHUB_ENV
 
       - run: echo "some publish with version ${{ steps.revision.outputs.version }}"
