@@ -22,21 +22,16 @@ jobs:
           fetch-depth: 0
       - run: echo "scan something"
 
-  inspect:
-    runs-on: ubuntu-latest
-    needs: [ build, scan ]
-    steps:
-      - run: jq '.' $GITHUB_EVENT_PATH
-
   release:
     if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: [ build, scan ]
     steps:
       - uses: actions/checkout@v4
+      - run: jq '.' $GITHUB_EVENT_PATH
       - id: revision
         run: |
-          VERSION=$(cat .bumpversion.cfg | grep current_version | awk '{ print version="$3" }')
+          VERSION=$(cat .bumpversion.cfg | grep current_version | awk '{ print version="\$3" }')
           echo "${VERSION}" >> "$GITHUB_OUTPUT"
       # cat .bumpversion.cfg | grep current_version | awk '{ print version=$3 }' >> $GITHUB_ENV
 
