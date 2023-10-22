@@ -35,6 +35,4 @@ jobs:
           echo "version=${VERSION}"
           cat .bumpversion.cfg | grep current_version | awk '{ printf "version=%s\n", $3 }' >> "${GITHUB_OUTPUT}"
       # cat .bumpversion.cfg | grep current_version | awk '{ print version=$3 }' >> $GITHUB_ENV
-      - id: revision
-        run: cat .bumpversion.cfg | grep current_version | awk '{ print $3 }'
       - run: echo "some publish with version ${{ steps.revision.outputs.version }}"
