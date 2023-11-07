@@ -4,7 +4,6 @@ on:
     types:
       - opened
       - labeled
-  page_build: ~
 
 jobs:
   action-issue-opened-or-labeled:

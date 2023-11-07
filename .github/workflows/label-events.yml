@@ -3,6 +3,8 @@ on:
   label:
     types:
       - created
+      - edited
+      - deleted
 jobs:
   action-label-created:
     runs-on: ubuntu-latest
