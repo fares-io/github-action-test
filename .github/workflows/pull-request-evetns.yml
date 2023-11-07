@@ -5,6 +5,7 @@ on:
       - opened
       - reopened
 
+
 jobs:
   mr-opened:
     runs-on: ubuntu-latest
