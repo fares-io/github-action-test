@@ -8,3 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "something happened with labels"
+      - run: jq '.' $GITHUB_EVENT_PATH
