@@ -1,0 +1,13 @@
+---
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  action-label-created:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "pull request (re)opened, run quality checks"
+      - run: jq '.' $GITHUB_EVENT_PATH
