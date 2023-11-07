@@ -7,7 +7,7 @@ on:
   page_build: ~
 
 jobs:
-  build:
+  action-issue-opened-or-labeled:
     runs-on: ubuntu-latest
     steps:
       - run: echo "something happened with issue labels and page build"
