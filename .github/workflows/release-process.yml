@@ -1,0 +1,11 @@
+---
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: jq '.' $GITHUB_EVENT_PATH
+      - run: echo "release created"
