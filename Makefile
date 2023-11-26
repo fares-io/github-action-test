@@ -47,7 +47,10 @@ sign: dist/code-v$(VERSION).zip
 .PHONY: build
 build: dist/VERSION sign
 	-which pip3
-	-pip3 install bump2version
+	-pip3 install --user bump2version
+	-which bumpversion
+	-ls -alR ~/bin
+	-ls -alR ~/.local
 
 # ---- patch release ---------------------------------------------------------------------------------------------------
 
