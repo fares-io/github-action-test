@@ -41,6 +41,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: release-artifacts
+          path: dist/
       - run: ls -al dist/
       - name: Create Release
         id: release
