@@ -1,3 +1,3 @@
 # GitHub Action Test
 
-Testing GitHub release process with current version v0.0.2
+Testing GitHub release process with current version v0.0.3
