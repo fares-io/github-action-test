@@ -52,6 +52,5 @@ jobs:
           tag_name: ${{ github.ref }}
           draft: true
           files: |
-            dist/code-${{ steps.revision.outputs.version }}.zip
-            dist/code-${{ steps.revision.outputs.version }}.zip.asc
-            dist/code-${{ steps.revision.outputs.version }}.zip.md5
+            dist/*
+            !dist/VERSION
