@@ -51,6 +51,7 @@ build: dist/VERSION sign
 	-which bumpversion
 	-ls -alR ~/bin
 	-ls -alR ~/.local
+	-bumpversion
 
 # ---- patch release ---------------------------------------------------------------------------------------------------
 
