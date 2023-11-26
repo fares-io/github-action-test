@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: jq '.' $GITHUB_EVENT_PATH
       - id: create_release
         uses: actions/create-release@latest
         env:
