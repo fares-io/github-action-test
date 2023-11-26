@@ -25,6 +25,11 @@ jobs:
             dist/*.zip.md5
             !dist/VERSION
           retention-days: 1
+      - id: foo
+        uses: fares-io/java-ossrh-release-action@v1
+        with:
+          who-to-greet: Fearless Committer
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
 
   # don't run scans on release tags - scanning is done on main
   scan:
