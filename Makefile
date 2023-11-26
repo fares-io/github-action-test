@@ -39,11 +39,10 @@ dist/VERSION: dist/
 dist/code-v$(VERSION).zip: dist/
 	@zip -b src/main/resources dist/code-v$(VERSION).zip *
 
-
 .PHONY: sign
 sign: dist/code-v$(VERSION).zip
-	@touch dist/code-v$(VERSION).zip.asc
-	@touch dist/code-v$(VERSION).zip.md5
+	@echo "FIXME fake sign $(VERSION)" > dist/code-v$(VERSION).zip.asc
+	@md5sum -b dist/code-v$(VERSION).zip > dist/code-v$(VERSION).zip.md5
 
 .PHONY: build
 build: dist/VERSION sign
